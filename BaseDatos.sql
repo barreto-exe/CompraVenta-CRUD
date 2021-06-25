@@ -15,6 +15,40 @@
  Date: 29/05/2021 01:02:49
 */
 
+/*********************************************************/
+/*Dominios*/
+CREATE DOMAIN dom_rif_cliente
+    AS char(10);
+
+CREATE DOMAIN dom_cedula
+    AS char(10);
+
+CREATE DOMAIN dom_direccion
+    AS varchar(255);
+
+CREATE DOMAIN dom_telefono
+    AS char(11)
+    CHECK (value not like '%[^0-9]%');
+
+CREATE DOMAIN dom_fecha
+    AS timestamp(0);
+
+CREATE DOMAIN dom_num_factura
+    AS char(15);
+
+CREATE DOMAIN dom_codigo
+    AS char(10);
+
+CREATE DOMAIN dom_cantidad
+    AS int
+    CHECK (value != 0);
+
+CREATE DOMAIN dom_precio
+    AS dec(7,2)
+    CHECK (value != 0);
+
+CREATE DOMAIN dom_descripcion
+    AS varchar(100);
 
 -- ----------------------------
 -- Table structure for articulos
