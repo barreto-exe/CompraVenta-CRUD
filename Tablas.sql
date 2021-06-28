@@ -69,9 +69,9 @@ CREATE TABLE articulos(
     descripcion dom_descripcion NOT NULL,
     cod_linea dom_codigo NOT NULL, 
     precio dom_precio NOT NULL,
-    existencia int NOT NULL CHECK (value >= 0), 
-    maximo int NOT NULL CHECK (value >= minimo), 
-    minimo int NOT NULL CHECK (value >= 0 AND value <= maximo), 
+    existencia int NOT NULL CHECK (existencia >= 0), 
+    maximo int NOT NULL CHECK (maximo >= minimo), 
+    minimo int NOT NULL CHECK (minimo >= 0 AND minimo <= maximo), 
     status_a char CHECK (status_a IN ('A', 'D', 'R')) NOT NULL
 );
 
@@ -158,7 +158,7 @@ ALTER TABLE facturas
 
 /*3*/
 ALTER TABLE articulos
-    ADD COLUMN fecha_out dom_fecha;    ACA DEBE SER NULL PARA QUE SEA OPCIONAL
+    ADD COLUMN fecha_out dom_fecha;    
 
 /*4*/
 ALTER TABLE clientes
@@ -167,7 +167,4 @@ ALTER TABLE clientes
     ADD COLUMN email varchar(100) DEFAULT '' NOT NULL;
 
 /*5*/
-ALTER TABLE articulos
-    ADD CONSTRAINT articulos_check CHECK (minimo <= maximo);
- 
 CREATE INDEX ON facturas (rif_cliente);
