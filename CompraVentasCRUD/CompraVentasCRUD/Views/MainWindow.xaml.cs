@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CompraVentasCRUD.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,20 @@ namespace CompraVentasCRUD
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ClientsPage clients;
+        private InvoicesPage invoices;
+        private ArticlesPage articles;
+        private LinesPage lines;
+
         public MainWindow()
         {
             InitializeComponent();
             HamburguerButton.IsChecked = true;
+            
+            clients = new ClientsPage();
+            invoices = new InvoicesPage();
+            articles = new ArticlesPage();
+            lines = new LinesPage();
             DrawerList.SelectedIndex = 0;
         }
 
@@ -46,6 +57,34 @@ namespace CompraVentasCRUD
             {
                 item.Children[1].Visibility = textOnItems;
             }
+        }
+
+        private void DrawerList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch(DrawerList.SelectedIndex)
+            {
+                case 0:
+                    {
+                        MainFrame.Content = clients;
+                        break;
+                    }
+                case 1:
+                    {
+                        MainFrame.Content = invoices;
+                        break;
+                    }
+                case 2:
+                    {
+                        MainFrame.Content = articles;
+                        break;
+                    }
+                case 3:
+                    {
+                        MainFrame.Content = lines;
+                        break;
+                    }
+            }
+
         }
     }
 }

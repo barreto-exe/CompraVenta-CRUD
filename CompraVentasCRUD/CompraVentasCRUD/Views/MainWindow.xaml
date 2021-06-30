@@ -95,7 +95,10 @@
                 Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
                     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <ListBox x:Name="DrawerList" Width="200">
+                        <ListBox
+                            x:Name="DrawerList"
+                            Width="200"
+                            SelectionChanged="DrawerList_SelectionChanged">
                             <StackPanel Height="30" Orientation="Horizontal">
                                 <Image
                                     Width="24"
@@ -156,8 +159,13 @@
                 HorizontalAlignment="Right"
                 Fill="LightGray" />
 
-            <!--  Main panel  -->
-            <StackPanel Grid.Column="2" Orientation="Vertical" />
+            <!--  Main Frame  -->
+            <Grid
+                Grid.Column="2"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+                <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
+            </Grid>
         </Grid>
     </Grid>
 </Window>
