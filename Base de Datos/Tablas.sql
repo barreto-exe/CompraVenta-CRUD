@@ -28,7 +28,7 @@ CREATE DOMAIN dom_cantidad
     CHECK (value >= 0);
 
 CREATE DOMAIN dom_precio
-    AS dec(7,2)
+    AS dec(15,2)
     CHECK (value >= 0);                  
 
 CREATE DOMAIN dom_descripcion
