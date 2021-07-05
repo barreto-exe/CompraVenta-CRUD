@@ -33,5 +33,15 @@ namespace CompraVentasCRUD.Views
             articlesDataTable = Article.DataFromDataBase();
             DgArticles.DataContext = articlesDataTable.DefaultView;
         }
+
+        private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

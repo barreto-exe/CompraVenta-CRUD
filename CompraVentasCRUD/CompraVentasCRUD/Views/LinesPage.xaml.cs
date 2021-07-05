@@ -33,5 +33,15 @@ namespace CompraVentasCRUD.Views
             linesDataTable = Models.Line.DataFromDataBase();
             DgLines.DataContext = linesDataTable.DefaultView;
         }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

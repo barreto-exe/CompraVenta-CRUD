@@ -15,7 +15,8 @@
             AutoGenerateColumns="False"
             CanUserAddRows="False"
             IsReadOnly="True"
-            ItemsSource="{Binding}">
+            ItemsSource="{Binding}"
+            SelectionMode="Single">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=num_factura}" Header="Núm. Factura" />
                 <DataGridTextColumn Binding="{Binding Path=rif_cliente}" Header="Rif Cliente" />
@@ -23,6 +24,26 @@
                 <DataGridTextColumn Binding="{Binding Path=tipo_pago}" Header="Tipo de Pago" />
                 <DataGridTextColumn Binding="{Binding Path=tipo_moneda}" Header="Moneda" />
             </DataGrid.Columns>
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick" />
+                </Style>
+            </DataGrid.ItemContainerStyle>
         </DataGrid>
+        <StackPanel
+            Width="auto"
+            Height="auto"
+            Margin="0,0,32,32"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom">
+            <Button
+                x:Name="BtnAdd"
+                Click="BtnAdd_Click"
+                Style="{StaticResource MaterialDesignFloatingActionAccentButton}">
+                <Button.Content>
+                    <Image Height="24" Source="{StaticResource add}" />
+                </Button.Content>
+            </Button>
+        </StackPanel>
     </Grid>
 </Page>

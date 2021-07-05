@@ -33,5 +33,15 @@ namespace CompraVentasCRUD.Views
             invoicesDataTable = Invoice.DataFromDataBase();
             DgInvoices.DataContext = invoicesDataTable.DefaultView;
         }
+
+        private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

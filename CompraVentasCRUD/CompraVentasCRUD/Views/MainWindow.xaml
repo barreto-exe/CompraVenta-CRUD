@@ -13,13 +13,6 @@
     MinHeight="650"
     WindowState="Maximized"
     mc:Ignorable="d">
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Resources/VectorsDictionary.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
     <Grid>
 
         <!--  Top bar  -->
@@ -162,6 +155,7 @@
             <!--  Main Frame  -->
             <Grid
                 Grid.Column="2"
+                Margin="8"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch">
                 <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
