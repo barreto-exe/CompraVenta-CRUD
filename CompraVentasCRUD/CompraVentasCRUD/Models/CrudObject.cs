@@ -15,6 +15,12 @@ namespace CompraVentasCRUD.Models
         /// <returns>Mensaje de error si la operación falla. Vacío si la operación es exitosa.</returns>
         public abstract string UpdateTupleDataBase();
 
+        /// <summary>
+        /// Registra la tupla en la base de datos.
+        /// </summary>
+        /// <returns>Mensaje de error si la operación falla. Vacío si la operación es exitosa.</returns>
+        public abstract string InsertTupleDataBase();
+
         protected static DataTable DataFromDataBase(string queryString)
         {
             DataSet set = new DataSet();

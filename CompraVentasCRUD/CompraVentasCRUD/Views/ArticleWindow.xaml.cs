@@ -19,6 +19,9 @@ namespace CompraVentasCRUD.Views
     public partial class ArticleWindow : Window
     {
         private Article article;
+        private bool IsUpdating { get => article != null; }
+        private bool IsCreating { get => article == null; }
+
         public ArticleWindow()
         {
             InitializeComponent();
@@ -63,6 +66,8 @@ namespace CompraVentasCRUD.Views
         }
         private void SetDataToObject()
         {
+            if(IsCreating) article = new Article();
+
             article.CodeArticle = TxtCode.Text;
             article.Description = TxtDescription.Text;
             article.CodeLine = TxtLine.Text;
@@ -104,9 +109,39 @@ namespace CompraVentasCRUD.Views
         }
         private void BtnAceptar_Click(object sender, RoutedEventArgs e)
         {
+            if(IsUpdating)
+            {
+                UpdateArticle();
+            }
+            //Is Creating
+            else
+            {
+                CreateArticle();
+            }
+        }
+
+        private void CreateArticle()
+        {
             SetDataToObject();
+            string message = article.InsertTupleDataBase();
+            if (message == "")
+            {
+                MessageBox.Show("Creación exitosa");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Creación fallida: \n" + message);
+                article = null;
+            }
+        }
+
+        private void UpdateArticle()
+        {
+            SetDataToObject();
+
             string message = article.UpdateTupleDataBase();
-            if(message == "")
+            if (message == "")
             {
                 MessageBox.Show("Actualización exitosa");
                 this.Close();

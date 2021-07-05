@@ -27,6 +27,11 @@ namespace CompraVentasCRUD.Models
             return CrudObject.DataFromDataBase(query);
         }
 
+        public override string InsertTupleDataBase()
+        {
+            throw new NotImplementedException();
+        }
+
         public override string UpdateTupleDataBase()
         {
             throw new NotImplementedException();
