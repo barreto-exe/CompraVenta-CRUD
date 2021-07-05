@@ -12,5 +12,10 @@ namespace CompraVentasCRUD.Models
             string query = "SELECT * FROM facturas";
             return CrudObject.DataFromDataBase(query);
         }
+
+        public override string UpdateTupleDataBase()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -26,5 +26,10 @@ namespace CompraVentasCRUD.Models
             string query = "SELECT * FROM clientes";
             return CrudObject.DataFromDataBase(query);
         }
+
+        public override string UpdateTupleDataBase()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

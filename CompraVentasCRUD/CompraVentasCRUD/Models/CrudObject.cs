@@ -7,8 +7,14 @@ using System.Text;
 
 namespace CompraVentasCRUD.Models
 {
-    public class CrudObject
+    public abstract class CrudObject
     {
+        /// <summary>
+        /// Actualiza el registro en la base de datos (usa el código cómo referencia).
+        /// </summary>
+        /// <returns>Mensaje de error si la operación falla. Vacío si la operación es exitosa.</returns>
+        public abstract string UpdateTupleDataBase();
+
         protected static DataTable DataFromDataBase(string queryString)
         {
             DataSet set = new DataSet();

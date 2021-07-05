@@ -36,12 +36,29 @@ namespace CompraVentasCRUD.Views
 
         private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            object[] row = ((DataRowView)((DataGridRow)sender).DataContext).Row.ItemArray;
 
+            Article article = new Article();
+            article.CodeArticle = (string)row[0];
+            article.Description = (string)row[1];
+            article.CodeLine = (string)row[2];
+            article.Price = (decimal)row[3];
+            article.Existence = (int)row[4];
+            article.Maximum = (int)row[5];
+            article.Minimun = (int)row[6];
+            article.Status = row[7].ToString()[0];
+            article.DateOut = (DateTime)row[8];
+
+            ArticleWindow aw = new ArticleWindow(article);
+            aw.ShowDialog();
+            UpdateArticlesDataTable();
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            ArticleWindow aw = new ArticleWindow();
+            aw.ShowDialog();
+            UpdateArticlesDataTable();
         }
     }
 }
