@@ -12,8 +12,18 @@
     <Grid Background="White">
         <DataGrid
             x:Name="DgArticles"
+            AutoGenerateColumns="False"
             CanUserAddRows="False"
             IsReadOnly="True"
-            ItemsSource="{Binding}" />
+            ItemsSource="{Binding}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=cod_articulo}" Header="Código" />
+                <DataGridTextColumn Binding="{Binding Path=descripcion}" Header="Descripción" />
+                <DataGridTextColumn Binding="{Binding Path=cod_linea}" Header="Código de Línea" />
+                <DataGridTextColumn Binding="{Binding Path=precio}" Header="Precio" />
+                <DataGridTextColumn Binding="{Binding Path=existencia}" Header="Existencia" />
+                <DataGridTextColumn Binding="{Binding Path=status_a}" Header="Status" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

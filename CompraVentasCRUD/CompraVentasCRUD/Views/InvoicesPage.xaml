@@ -12,8 +12,17 @@
     <Grid Background="White">
         <DataGrid
             x:Name="DgInvoices"
+            AutoGenerateColumns="False"
             CanUserAddRows="False"
             IsReadOnly="True"
-            ItemsSource="{Binding}" />
+            ItemsSource="{Binding}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=num_factura}" Header="Núm. Factura" />
+                <DataGridTextColumn Binding="{Binding Path=rif_cliente}" Header="Rif Cliente" />
+                <DataGridTextColumn Binding="{Binding Path=fecha_emision}" Header="Fecha" />
+                <DataGridTextColumn Binding="{Binding Path=tipo_pago}" Header="Tipo de Pago" />
+                <DataGridTextColumn Binding="{Binding Path=tipo_moneda}" Header="Moneda" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

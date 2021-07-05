@@ -12,8 +12,19 @@
     <Grid Background="White">
         <DataGrid
             x:Name="DgClients"
+            AutoGenerateColumns="False"
             CanUserAddRows="False"
             IsReadOnly="True"
-            ItemsSource="{Binding}" />
+            ItemsSource="{Binding}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=rif_cliente}" Header="Rif" />
+                <DataGridTextColumn Binding="{Binding Path=cedula}" Header="Cédula" />
+                <DataGridTextColumn Binding="{Binding Path=nombre}" Header="Nombre" />
+                <DataGridTextColumn Binding="{Binding Path=direccion}" Header="Dirección" />
+                <DataGridTextColumn Binding="{Binding Path=telefono}" Header="Teléfono" />
+                <DataGridTextColumn Binding="{Binding Path=status_c}" Header="Status" />
+                <DataGridTextColumn Binding="{Binding Path=email}" Header="Email" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

@@ -12,8 +12,14 @@
     <Grid Background="White">
         <DataGrid
             x:Name="DgLines"
+            AutoGenerateColumns="False"
             CanUserAddRows="False"
             IsReadOnly="True"
-            ItemsSource="{Binding}" />
+            ItemsSource="{Binding}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=cod_linea}" Header="Código de Línea" />
+                <DataGridTextColumn Binding="{Binding Path=descripcion}" Header="Descripción" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
