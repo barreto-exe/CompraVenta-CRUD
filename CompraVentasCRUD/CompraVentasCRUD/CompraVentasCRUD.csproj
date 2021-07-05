@@ -11,11 +11,27 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.1.0" />
+    <PackageReference Include="Npgsql" Version="5.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\BaseDatos.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BaseDatos.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\BaseDatos.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>BaseDatos.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

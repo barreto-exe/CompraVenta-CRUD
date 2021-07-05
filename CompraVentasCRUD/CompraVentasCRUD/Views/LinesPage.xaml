@@ -10,6 +10,10 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Grid Background="White">
-        <TextBlock Text="Lineas" />
+        <DataGrid
+            x:Name="DgLines"
+            CanUserAddRows="False"
+            IsReadOnly="True"
+            ItemsSource="{Binding}" />
     </Grid>
 </Page>

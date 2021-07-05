@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CompraVentasCRUD.Models;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,9 +20,18 @@ namespace CompraVentasCRUD.Views
     /// </summary>
     public partial class ArticlesPage : Page
     {
+        private DataTable articlesDataTable;
+
         public ArticlesPage()
         {
             InitializeComponent();
+            UpdateArticlesDataTable();
+        }
+
+        private void UpdateArticlesDataTable()
+        {
+            articlesDataTable = Article.DataFromDataBase();
+            DgArticles.DataContext = articlesDataTable.DefaultView;
         }
     }
 }
