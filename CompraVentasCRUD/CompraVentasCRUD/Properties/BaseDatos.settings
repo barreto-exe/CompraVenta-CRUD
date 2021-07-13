@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CompraVentasCRUD.Properties" GeneratedClassName="BaseDatos">
+  <Profiles />
+  <Settings>
+    <Setting Name="ServidorPgSql" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="BaseDatosPgSql" Type="System.String" Scope="User">
+      <Value Profile="(Default)">compraventasdb</Value>
+    </Setting>
+    <Setting Name="UsuarioPgSql" Type="System.String" Scope="User">
+      <Value Profile="(Default)">postgres</Value>
+    </Setting>
+    <Setting Name="PassPgSql" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1234</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

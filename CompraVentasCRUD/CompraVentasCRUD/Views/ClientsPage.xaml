@@ -10,6 +10,42 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Grid Background="White">
-        <TextBlock Text="Clientes" />
+        <DataGrid
+            x:Name="DgClients"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            IsReadOnly="True"
+            ItemsSource="{Binding}"
+            SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=rif_cliente}" Header="Rif" />
+                <DataGridTextColumn Binding="{Binding Path=cedula}" Header="Cédula" />
+                <DataGridTextColumn Binding="{Binding Path=nombre}" Header="Nombre" />
+                <DataGridTextColumn Binding="{Binding Path=direccion}" Header="Dirección" />
+                <DataGridTextColumn Binding="{Binding Path=telefono}" Header="Teléfono" />
+                <DataGridTextColumn Binding="{Binding Path=status_c}" Header="Status" />
+                <DataGridTextColumn Binding="{Binding Path=email}" Header="Email" />
+            </DataGrid.Columns>
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick" />
+                </Style>
+            </DataGrid.ItemContainerStyle>
+        </DataGrid>
+        <StackPanel
+            Width="auto"
+            Height="auto"
+            Margin="0,0,32,32"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom">
+            <Button
+                x:Name="BtnAdd"
+                Click="BtnAdd_Click"
+                Style="{StaticResource MaterialDesignFloatingActionAccentButton}">
+                <Button.Content>
+                    <Image Height="24" Source="{StaticResource add}" />
+                </Button.Content>
+            </Button>
+        </StackPanel>
     </Grid>
 </Page>

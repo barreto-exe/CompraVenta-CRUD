@@ -29,13 +29,14 @@ namespace CompraVentasCRUD
         public MainWindow()
         {
             InitializeComponent();
-            HamburguerButton.IsChecked = true;
             
             clients = new ClientsPage();
             invoices = new InvoicesPage();
             articles = new ArticlesPage();
             lines = new LinesPage();
+
             DrawerList.SelectedIndex = 0;
+            HamburguerButton.IsChecked = true;
         }
 
         private void HamburguerButton_Click(object sender, RoutedEventArgs e)
@@ -55,6 +56,7 @@ namespace CompraVentasCRUD
             //Setting visibility just for icons (collapsed drawer)
             foreach (StackPanel item in DrawerList.Items)
             {
+                //Hidding or showing text label
                 item.Children[1].Visibility = textOnItems;
             }
         }
